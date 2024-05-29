@@ -1,5 +1,9 @@
 import pygame, sys
+from player import *
 
+def callfunc():
+    screen.fill(bg_color)
+    player_group.draw(screen)
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -11,13 +15,17 @@ pygame.display.set_caption('Space Invaders')
 pygame.mouse.set_visible(False)
 bg_color = pygame.Color('grey12')
 
+player = Player(screen_width / 2, 0, 'spaceship.png')
+player_group = pygame.sprite.Group()
+player_group.add(player)
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
 
-        screen.fill(bg_color)
+        callfunc()
 
         pygame.display.flip()
         clock.tick(60)
