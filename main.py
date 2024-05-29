@@ -15,7 +15,7 @@ pygame.display.set_caption('Space Invaders')
 pygame.mouse.set_visible(False)
 bg_color = pygame.Color('grey12')
 
-player = Player(screen_width / 2, 0, 'spaceship.png')
+player = Player(screen_width / 2 - 100, screen_height - 160, 'spaceship.png')
 player_group = pygame.sprite.Group()
 player_group.add(player)
 
@@ -25,7 +25,13 @@ while True:
             pygame.quit()
             sys.exit()
 
-        callfunc()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_a:
+                player.x -= 100
+            if event.key == pygame.K_d:
+                player.x += 100
 
-        pygame.display.flip()
-        clock.tick(60)
+    callfunc()
+
+    pygame.display.flip()
+    clock.tick(60)

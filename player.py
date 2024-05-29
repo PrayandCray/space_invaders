@@ -9,3 +9,6 @@ class Player(pygame.sprite.Sprite):
         self.x = x
         self.y = y
         self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y
+            
