@@ -5,6 +5,7 @@ pygame.init()
 
 class Bullet(pygame.sprite.Sprite):
     def __init__(self, x, y, picture_path):
+        super(). __init__()
         self.image = pygame.image.load(picture_path)
         self.x = x
         self.y = y
