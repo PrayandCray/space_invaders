@@ -16,7 +16,7 @@ pygame.display.set_caption('Space Invaders')
 pygame.mouse.set_visible(False)
 bg_color = pygame.Color('grey12')
 
-player = Player(screen_width / 2 - 100, screen_height - 160, 'spaceship.png')
+player = Player(screen_width / 2 - 100, screen_height - 85, 'spaceship.png', screen_width)
 player_group = pygame.sprite.Group()
 player_group.add(player)
 
