@@ -3,6 +3,7 @@ from player import *
 
 def callfunc():
     screen.fill(bg_color)
+    player.update()
     player_group.draw(screen)
 
 pygame.init()
@@ -24,12 +25,6 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_a:
-                player.x -= 100
-            if event.key == pygame.K_d:
-                player.x += 100
 
     callfunc()
 
